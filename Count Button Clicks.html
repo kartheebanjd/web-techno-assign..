@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click Counter</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: 'Verdana', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            border: 2px solid #007bff;
+            background-color: #007bff;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        button:active {
+            transform: scale(0.95);
+        }
+        p {
+            font-size: 24px;
+            margin-top: 20px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="clickButton">Click Me!</button>
+    <p id="clickCounter">You have clicked 0 times.</p>
+
+    <script>
+        const button = document.getElementById('clickButton');
+        const counterText = document.getElementById('clickCounter');
+        let clickCount = 0;
+
+        button.addEventListener('click', () => {
+            clickCount++;
+            counterText.textContent = `You have clicked ${clickCount} times.`;
+        });
+    </script>
+
+</body>
+</html>
